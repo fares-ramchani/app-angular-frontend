@@ -1,0 +1,86 @@
+
+<app-mininavbar class="minibar">
+                
+</app-mininavbar>
+<div class="row">
+  <div class="col">
+    <div class="card shadow">
+      <div class="card-header border-0">
+        <h3 class="mb-0">liste de clients</h3>
+        <input class="form-control" type="text" placeholder="search" [(ngModel)]="searchText">
+      </div>
+      <div class="table-responsive">
+        <table class="table align-items-center table-flush">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">nom</th>
+              <th scope="col">prenom</th>
+              <th scope="col">telephone</th>
+              <th scope="col">email</th>
+              <th scope="col">ville</th>
+              <th scope="col">adresse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor=" let Client of clients | search:searchText | paginate:{
+              itemsPerPage: tableSize,
+              currentPage: page,
+              totalItems: count};  let i =index" class="100">
+              <th scope="row">
+                <div class="media align-items-center">
+                  <div class="media-body">
+                    {{Client.nom}}
+                  </div>
+                </div>
+              </th>
+              <td>
+                {{Client.prenom}}
+              </td>
+              <td>
+                {{Client.telephone}}
+              </td>
+              <td>
+                <div class="avatar-group">
+                  {{Client.email}}
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-center">
+                  <td>{{Client.ville}}</td>
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-center">
+                  
+                        <td>{{Client.adresse}}</td>
+                </div>
+              </td>
+              
+                <td>
+                  <div class="d-flex align-items-center">
+                    <button (click)="deleteClient(Client)" class="btn btn-outline-danger">
+                      <i class=" fa fa-solid fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+            </tr>
+            <tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <pagination-controls  
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event) ">
+         
+        </pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Dark table -->
+
+  

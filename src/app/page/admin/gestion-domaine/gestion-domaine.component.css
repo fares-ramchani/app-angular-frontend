@@ -1,0 +1,19 @@
+.row{
+    margin-top: 80px;
+}
+.kk{
+    display: flex;
+    
+}
+.button{
+    background:linear-gradient(to right, #FF4B2B, #FF416C);
+    border-radius: 10px;
+    margin-left: 8px;
+    
+}
+.button:hover{
+    background:linear-gradient(to right, #FF416C, #FF4B2B);
+
+}
+
+

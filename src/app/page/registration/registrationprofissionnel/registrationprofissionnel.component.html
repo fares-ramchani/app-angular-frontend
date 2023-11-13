@@ -1,0 +1,76 @@
+<app-navbar>
+  
+</app-navbar>
+<body>
+    <div class="container">
+      <div class="title">Registration profissioneel</div>
+      <div class="content">
+        <form [formGroup]="profissionnelForm" (ngSubmit)="saveProfissionnel()" novalidate >
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">nom</span>
+              <input type="text" placeholder="Enter ton nom" formControlName="nom" required>
+              <small *ngIf="profissionnelForm.controls['nom'].errors && profissionnelForm.controls['nom'].touched" class="text-danger">
+                {{getErrorsMessage('nom',profissionnelForm.controls['nom'].errors)}}</small>
+            </div>
+            <div class="input-box">
+              <span class="details">prenom</span>
+              <input type="text" placeholder="Enter ton prenom" formControlName="prenom" required>
+              <small *ngIf="profissionnelForm.controls['prenom'].errors && profissionnelForm.controls['prenom'].touched" class="text-danger">
+                {{getErrorsMessage('prenom',profissionnelForm.controls['prenom'].errors)}}</small>
+            </div>
+            <div class="input-box">
+              <span class="details">telephone</span>
+              <input type="number" placeholder="Enter ton telephone" formControlName="telephone" required>
+              <small *ngIf="profissionnelForm.controls['telephone'].errors && profissionnelForm.controls['telephone'].touched" class="text-danger">
+                {{getErrorsMessage('telephone',profissionnelForm.controls['telephone'].errors)}}</small>
+            </div>
+            <div class="input-box">
+              <span class="details">ville</span>
+              <input type="text" placeholder="Enter ton ville" formControlName="ville" required>
+              <small *ngIf="profissionnelForm.controls['ville'].errors && profissionnelForm.controls['ville'].touched" class="text-danger">
+                {{getErrorsMessage('ville',profissionnelForm.controls['ville'].errors)}}</small>
+            </div>
+            <div class="input-box">
+              <span class="details">adresse</span>
+              <input type="text" placeholder="Confirm ton adresse" formControlName="adresse" required>
+              <small *ngIf="profissionnelForm.controls['adresse'].errors && profissionnelForm.controls['adresse'].touched" class="text-danger">
+                {{getErrorsMessage('adresse',profissionnelForm.controls['adresse'].errors)}}</small>
+            </div>
+            <div class="input-box">
+              <span class="details">email</span>
+              <input type="email" placeholder="Enter ton email" formControlName="email" required>
+              <small *ngIf="profissionnelForm.controls['email'].errors && profissionnelForm.controls['email'].touched" class="text-danger">
+                {{getErrorsMessage('email',profissionnelForm.controls['email'].errors)}}</small>
+            </div>
+            <div class="input-box">
+              <span class="details">mot de pasee</span>
+              <input type="text" placeholder="Enter ton mot de passe" formControlName="motDePasse" required>
+              <small *ngIf="profissionnelForm.controls['motDePasse'].errors && profissionnelForm.controls['motDePasse'].touched" class="text-danger">
+                {{getErrorsMessage('motDePasse',profissionnelForm.controls['motDePasse'].errors)}}</small>
+            </div>
+            <div class="input-box">
+                <span class="details">localisation</span>
+                <input type="text" placeholder="Enter ton mot de passe" formControlName="localisation" required>
+                <small *ngIf="profissionnelForm.controls['localisation'].errors && profissionnelForm.controls['localisation'].touched" class="text-danger">
+                  {{getErrorsMessage('localisation',profissionnelForm.controls['localisation'].errors)}}</small>
+              </div>
+              <div class="input-box">
+                <select class="select" aria-label="Default select example" formControlName="domaine" >
+                  <option  disabled hidden selected value="">Sélectionnez un domaine</option>
+                  <option *ngFor="let domaine of domaines" [value]="domaine.nom" >{{domaine.nom}}</option>
+                </select>
+              </div>
+            <div class="input-box">
+              <span class="details">photo</span>
+              <input type="file" placeholder="insirer un photo" (change)="onFileChanged($event)" >
+            </div>
+          </div>
+          <div class="button">
+            <input type="submit" value="Register">
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  </body>

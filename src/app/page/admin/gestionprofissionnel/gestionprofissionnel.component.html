@@ -1,0 +1,85 @@
+<app-mininavbar>
+                
+</app-mininavbar>
+<div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">liste de profissionnel</h3>
+          <input class="form-control" type="text" placeholder="search" [(ngModel)]="searchText">
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">nom</th>
+                <th scope="col">prenom</th>
+                <th scope="col">telephone</th>
+                <th scope="col">email</th>
+                <th scope="col">ville</th>
+                <th scope="col">adresse</th>
+                <th scope="col">domaine</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor=" let profissionnel of profissionnels| search:searchText | paginate:{
+                itemsPerPage: tableSizee,
+                currentPage: pagee,
+                totalItems: counte};  let j = index" class="001">
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <div class="media-body">
+                      {{profissionnel.nom}}
+                    </div>
+                  </div>
+                </th>
+                <td>
+                  {{profissionnel.prenom}}
+                </td>
+                <td>
+                  {{profissionnel.telephone}}
+                </td>
+                <td>
+                  <div class="avatar-group">
+                    {{profissionnel.email}}
+                  </div>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    {{profissionnel.ville}}
+                  </div>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    {{profissionnel.adresse}}
+                  </div>
+                </td>
+                <td>
+                    <div class="d-flex align-items-center">
+                      {{profissionnel.domaine}}
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <button (click)="deleteprofissionnel(profissionnel)" class="btn btn-outline-danger">
+                        <i class=" fa fa-solid fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <pagination-controls  
+          previousLabel="Prev"
+          nextLabel="Next"
+          (pageChange)="onTableDataChange1($event)" i >
+           
+          </pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,38 @@
+
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#">KhaDemNi</a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">KhaDemNi</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a routerLink="/login" routerLinkActive="active">login</a></li>
+                    <li><a routerLink="/registration" routerLinkActive="active">sing up</a></li>
+                    <li><a routerLink="/home" routerLinkActive="active">Portfolio</a></li>
+                    <li><a routerLink="/home" routerLinkActive="active">Services</a></li>
+                    <li><a routerLink="/home" routerLinkActive="active">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="username">
+                <ul class="nav-links">
+                    
+                    <li> <a routerLink="/profilClinet" routerLinkActive="active">{{username}}</a> </li>
+                </ul>
+               
+            </div>
+            <div *ngIf=retrievedImage>
+                <img [src]="retrievedImage" routerLink="/profilClinet" routerLinkActive="active" >
+            </div>
+            <button *ngIf="serviceloginService.isAuthenticated==true" class="logout" (click)="logout()">Logout</button>
+          
+        </div>
+    </nav>
+
+
+</body>

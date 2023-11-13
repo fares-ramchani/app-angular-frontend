@@ -1,0 +1,70 @@
+<app-navbar>
+  
+</app-navbar>
+<body>
+    <div class="container">
+      <div class="title">modifier profil {{username}}</div>
+      <div class="content">
+        <form   [formGroup]="ModifierProfissinnelForm"  (ngSubmit)="modifierProfissionnel()" novalidate >
+            <div class="img" *ngIf=retrievedImage>
+                <img [src]="retrievedImage" >
+            </div>
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">nom</span>
+              <input type="text" placeholder="Enter ton nom" formControlName="nom" required>
+             
+            </div>
+            <div class="input-box">
+              <span class="details">prenom</span>
+              <input type="text" placeholder="Enter ton prenom" formControlName="prenom" required>
+            
+            </div>
+            <div class="input-box">
+              <span class="details">telephone</span>
+              <input type="number" placeholder="Enter ton telephone" formControlName="telephone" required>
+              
+            </div>
+            <div class="input-box">
+              <span class="details">ville</span>
+              <input type="text" placeholder="Enter ton ville" formControlName="ville" required>
+              
+            </div>
+            <div class="input-box">
+              <span class="details">adresse</span>
+              <input type="text" placeholder="Confirm ton adresse" formControlName="adresse" required>
+              
+            </div>
+            <div class="input-box">
+              <span class="details">email</span>
+              <input type="email" placeholder="Enter ton email" formControlName="email" required>
+              
+            </div>
+            <div class="input-box">
+              <span class="details">mot de pasee</span>
+              <input type="text" placeholder="Enter ton mot de passe" formControlName="motDePasse" required>
+              
+            </div>
+            <div class="input-box">
+                <span class="details">localisation</span>
+                <input type="text" placeholder="Enter ton mot de passe" formControlName="localisation" required>
+                
+              </div>
+              <div class="input-box">
+                <span class="details">domaine</span>
+                <input type="text" placeholder="Enter ton mot de passe" formControlName="domaine" required>
+                
+              </div>
+            <div class="input-box">
+              <span class="details">photo</span>
+              <input type="file" placeholder="insirer un photo" (change)="onFileChanged($event)" >
+            </div>
+          </div>
+          <div class="button">
+            <input type="submit" value="Register">
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  </body>

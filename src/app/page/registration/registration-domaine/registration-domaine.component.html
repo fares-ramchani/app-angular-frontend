@@ -1,0 +1,29 @@
+<body>
+    <div class="container">
+      <div class="title">Registration domaine</div>
+      <div class="content">
+        <form  [formGroup]="DomaineForm" (ngSubmit)="saveDomaine()" novalidate>
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">nom</span>
+              <input type="text" placeholder="Enter votre nom" formControlName="nom" required>
+              <small *ngIf="DomaineForm.controls['nom'].errors && DomaineForm.controls['nom'].touched" class="text-danger">
+                {{getErrorsMessage('nom',DomaineForm.controls['nom'].errors)}}</small>
+            </div>
+            <div class="input-box">
+              <span class="details">dicription</span>
+              <input type="text" placeholder="discription" formControlName="discription" required>
+              <small *ngIf="DomaineForm.controls['discription'].errors && DomaineForm.controls['discription'].touched" class="text-danger">
+                {{getErrorsMessage('discription',DomaineForm.controls['discription'].errors)}}</small>
+            </div>
+           
+           </div>
+          <div class="button">
+            <input type="submit" value="Register" [disabled]="DomaineForm.invalid">
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  
+  </body>

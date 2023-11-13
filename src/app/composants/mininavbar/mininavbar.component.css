@@ -1,0 +1,122 @@
+  /* ===== Google Font Import - Poppins ===== */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.4s ease;;
+  }
+  
+  
+  /* ===== Colours ===== */
+  :root{
+      --body-color: #E4E9F7;
+      --nav-color: #4070F4;
+      --side-nav: #010718;
+      --text-color: #FFF;
+      --search-bar: #F2F2F2;
+      --search-text: #010718;
+  }
+  
+  
+  body.dark{
+      --body-color: #18191A;
+      --nav-color: #242526;
+      --side-nav: #242526;
+      --text-color: #CCC;
+      --search-bar: #242526;
+  }
+  
+  nav{  
+
+      top: 0;
+      left: 0;
+      height: 145px;
+      width: 100%;
+      
+      background: linear-gradient(to right, #FF416C, #FF4B2B);
+      z-index: 100;
+  }
+  
+  body.dark nav{
+      border: 1px solid #393838;
+  
+  }
+  
+  nav .nav-bar{
+      position: relative;
+      height: 100%;
+      
+      width: 100%;
+      background: linear-gradient(to right, #FF4B2B, #FF416C);
+      margin: 0 auto;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  
+  nav .nav-bar .sidebarOpen{
+      color: #FFF;
+      font-size: 25px;
+      padding: 5px;
+      cursor: pointer;
+      display: none;
+  }
+  
+  nav .nav-bar .logo a{
+      font-size: 25px;
+      font-weight: 500;
+      color: #FFF;
+      text-decoration: none;
+  }
+  
+  .menu .logo-toggle{
+      display: none;
+  }
+  
+  .nav-bar .nav-links{
+      display: flex;
+      align-items: center;
+      margin-left: 100px;
+  }
+  
+  .nav-bar .nav-links li{
+      margin: 0 5px;
+      list-style: none;
+      margin-top: 15%;
+  }
+  
+  .nav-links li a{
+      position: relative;
+      font-size: 17px;
+      font-weight: 400;
+      color: #FFF;
+      text-decoration: none;
+      margin-left: 160px;
+  }
+
+
+
+  
+  .nav-links li a::before{
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background-color: #FFF;
+      opacity: 0;
+      transition: all 0.3s ease;
+  }
+  
+  .nav-links li:hover a::before{
+      opacity: 1;
+  }
+  
